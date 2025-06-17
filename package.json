@@ -1,0 +1,32 @@
+{
+  "name": "@zettca/config",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Configuration files for web-based React projects",
+  "license": "MIT",
+  "author": "zettca",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zettca/config.git"
+  },
+  "bugs": "https://github.com/zettca/config/issues",
+  "homepage": "https://github.com/zettca/config",
+  "keywords": [
+    "config",
+    "prettier",
+    "oxlint",
+    "react",
+    "typescript"
+  ],
+  "files": [
+    "src"
+  ],
+  "exports": {
+    ".": "./src/index.js",
+    "./oxlint": "./src/oxlint.config.json",
+    "./oxlint-base": "./src/oxlint-base.config.json",
+    "./prettier": "./src/prettier.config.json",
+    "./reset.d.ts": "./src/reset.d.ts",
+    "./tsconfig": "./src/tsconfig.json"
+  }
+}
