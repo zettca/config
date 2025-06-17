@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/refs/tags/oxlint_v1.1.0/npm/oxlint/configuration_schema.json",
-  "extends": ["./oxlint-base.config.json"],
+  "extends": ["./base.json"],
   "categories": {
     "perf": "error",
     "suspicious": "error",
@@ -15,6 +15,7 @@
     "import/no-unassigned-import": "off",
     "react/react-in-jsx-scope": "off",
 
+    "eslint/default-case": "off",
     "eslint/no-console": ["error", { "allow": ["warn", "error", "info"] }],
     "eslint/no-empty-function": "off",
     "eslint/no-eq-null": "off",

@@ -18,15 +18,11 @@
     "react",
     "typescript"
   ],
-  "files": [
-    "src"
-  ],
   "exports": {
-    ".": "./src/index.js",
-    "./oxlint": "./src/oxlint.config.json",
-    "./oxlint-base": "./src/oxlint-base.config.json",
-    "./prettier": "./src/prettier.config.json",
-    "./reset.d.ts": "./src/reset.d.ts",
-    "./tsconfig": "./src/tsconfig.json"
+    ".": "./index.js",
+    "./oxlint/*": "./oxlint/*",
+    "./prettier": "./prettier.config.json",
+    "./reset.d.ts": "./reset.d.ts",
+    "./tsconfig": "./tsconfig.json"
   }
 }
