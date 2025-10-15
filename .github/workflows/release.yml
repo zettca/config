@@ -25,11 +25,8 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - name: Publish
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-          NPM_CONFIG_PROVENANCE: true
+        run: npm publish --provenance --access public
 
-      - run: npx changelogithub@13
+      - run: npx changelogithub@0.13.11
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
