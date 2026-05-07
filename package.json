@@ -14,6 +14,7 @@
   "keywords": [
     "config",
     "prettier",
+    "oxfmt",
     "oxlint",
     "react",
     "typescript"
@@ -21,6 +22,7 @@
   "packageManager": "pnpm@11.0.7+sha512.724a7b5d2319cdd7009d65e15a2c29aae9d3902b50585ca163d38a7737eb85bc4e72196879ff59768a71e81fe32aa71e8b70f088b2e24b9e4a2850d87e4607b5",
   "exports": {
     ".": "./index.js",
+    "./oxfmt": "./oxfmt.config.js",
     "./oxlint": "./oxlint.config.js",
     "./oxlint/*": "./oxlint/*",
     "./prettier": "./prettier.config.json",
@@ -28,6 +30,7 @@
     "./tsconfig": "./tsconfig.json"
   },
   "optionalDependencies": {
+    "oxfmt": "^0.48.0",
     "oxlint": "^1.10.0",
     "prettier": "^3.4.0",
     "typescript": "^5.8.0"
