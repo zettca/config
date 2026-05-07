@@ -1,12 +1,33 @@
-{
-  "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/refs/tags/oxlint_v1.1.0/npm/oxlint/configuration_schema.json",
-  "extends": ["./base.json"],
-  "categories": {
-    "perf": "error",
-    "suspicious": "error",
-    "restriction": "error"
+import { defineConfig } from "oxlint";
+
+export const baseConfig = defineConfig({
+  plugins: ["typescript", "unicorn", "react", "oxc", "import", "jsx-a11y"],
+  categories: {
+    correctness: "error",
   },
-  "rules": {
+  env: {
+    builtin: true,
+    es2022: true,
+    browser: true,
+    node: true,
+  },
+  ignorePatterns: ["*.d.ts", "dist", "node_modules"],
+  rules: {
+    "eslint/no-unused-vars": ["error", { ignoreRestSiblings: true }],
+    "jsx_a11y/no-autofocus": "off",
+    "jsx_a11y/role-supports-aria-props": "off",
+    "jsx_a11y/role-has-required-aria-props": "off",
+  },
+});
+
+export const strictConfig = defineConfig({
+  extends: [baseConfig],
+  categories: {
+    perf: "error",
+    suspicious: "error",
+    restriction: "error",
+  },
+  rules: {
     "unicorn/prefer-set-has": "off",
 
     "import/no-duplicates": "off",
@@ -16,7 +37,7 @@
     "react/react-in-jsx-scope": "off",
 
     "eslint/default-case": "off",
-    "eslint/no-console": ["error", { "allow": ["warn", "error", "info"] }],
+    "eslint/no-console": ["error", { allow: ["warn", "error", "info"] }],
     "eslint/no-empty-function": "off",
     "eslint/no-eq-null": "off",
     "eslint/no-plusplus": "off",
@@ -41,8 +62,8 @@
     "unicorn/no-array-reduce": "off",
     "unicorn/no-nested-ternary": "off",
 
-    "eslint/eqeqeq": ["error", "always", { "null": "ignore" }],
-    "eslint/max-depth": ["error", { "max": 4 }],
+    "eslint/eqeqeq": ["error", "always", { null: "ignore" }],
+    "eslint/max-depth": ["error", { max: 4 }],
     "eslint/no-array-constructor": "error",
     "eslint/no-else-return": "error",
     "eslint/no-fallthrough": "error",
@@ -68,11 +89,11 @@
     "react/jsx-boolean-value": "error",
     "react/jsx-curly-brace-presence": [
       "error",
-      { "props": "never", "children": "never" }
+      { props: "never", children: "never" },
     ],
     "react/self-closing-comp": "error",
     "typescript/consistent-indexed-object-style": "error",
     "typescript/consistent-type-imports": "error",
-    "typescript/no-inferrable-types": "error"
-  }
-}
+    "typescript/no-inferrable-types": "error",
+  },
+});
